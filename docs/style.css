@@ -462,6 +462,7 @@ input[type=text], select
 {
     text-align: right;
     margin: 20px;
+    background: #272932d6;;
 }
 
 .feature-right-div
