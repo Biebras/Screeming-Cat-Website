@@ -4,7 +4,7 @@
     font-family: 'Montserrat';
     
     --main-color: #272932;
-    --main-color-warm: #363b47;
+    --main-color-warm: #353b4a;
     --main-contrast: #E7ECEF;
     --main-contrast-darker: #ccd2d7;
     --secondery-color:#0F7173;
@@ -95,7 +95,7 @@ p
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    scroll-snap-align: start;
 }
 
 .first-container-section
@@ -157,6 +157,28 @@ p
     opacity: 1;
     pointer-events: auto;
     z-index: 2;
+}
+
+@keyframes slide-in-from-top
+{
+    0% {transform: translateY(-10vh); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes slide-in-from-right
+{
+    0% {transform: translateX(-10vw); opacity: 0;}
+    100% {transform: translateX(0); opacity: 1;}
+}
+
+.slide-from-top
+{
+    animation: 1s ease-out 0s 1 slide-in-from-top;
+}
+
+.slide-from-left
+{
+    animation: 1s ease-out 0s 1 slide-in-from-left;
 }
 
 .box
@@ -261,8 +283,6 @@ p
     font-size: 1.5em;
     background: var(--main-color);
     border-radius: 8px;
-    height: 20%;
-    width: 30%;
     opacity: 0;
 
     transition: all 0.35s ease-out;
@@ -275,9 +295,7 @@ p
 
 .featured-button:hover
 {
-    border-radius: 100%;
-    height: 30%;
-    width: 18%;
+    border-radius: 30px;
     background: var(--secondery-color);
 }
 
@@ -434,6 +452,10 @@ input[type=text], select
     align-content: center;
     align-items: center;
     background: var(--main-color-warm);
+    animation-name: starAnimation;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    background-image: url("Images/Stars/Stars2.png");
 }
 
 .feature-left-title
@@ -458,6 +480,13 @@ input[type=text], select
     height: 70%;
     padding-left: 1%;
     object-fit: cover;
+    min-width: 70%;
+    transition: transform .3s ease-out;
+}
+
+.feature-right-images:hover
+{
+    transform: translate(0, -10px);
 }
 
 .feature-right-images:last-child
