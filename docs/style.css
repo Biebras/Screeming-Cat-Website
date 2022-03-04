@@ -449,13 +449,63 @@ input[type=text], select
     width: 33%;
     height: 100%;
     display: flex;
-    align-content: center;
-    align-items: center;
+    align-items:flex-end;
+    justify-content: center;
+    flex-direction: column;
     background: var(--main-color-warm);
+    background-image: url("Images/MonkeyPartciles/mPar1.png");
     animation-name: starAnimation;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
-    background-image: url("Images/Stars/Stars2.png");
+}
+
+.monkey-div
+{
+    animation-name: monkeyAnimation;
+}
+
+.neon-div
+{
+    animation-name: neonAnimation;
+    background-position: right -20% bottom 50%;
+}
+
+@keyframes monkeyAnimation 
+{
+    0%{ background-image: url("Images/MonkeyPartciles/mPar1.png")}
+    50%{ background-image: url("Images/MonkeyPartciles/mPar3.png")}
+    100%{ background-image: url("Images/MonkeyPartciles/mPar5.png")}
+}
+
+@keyframes monkeyAnimation 
+{
+    0%{ background-image: url("Images/MonkeyPartciles/mPar1.png")}
+    50%{ background-image: url("Images/MonkeyPartciles/mPar3.png")}
+    100%{ background-image: url("Images/MonkeyPartciles/mPar5.png")}
+}
+
+@keyframes neonAnimation 
+{
+    0%{ background-image: url("Images/Neon/neonPart1.png")}
+    50%{ background-image: url("Images/Neon/neonPart2.png")}
+    100%{ background-image: url("Images/Neon/neonPart3.png")}
+}
+
+.feature-next-button
+{
+    display: flex;
+    position: relative;
+    background: var(--third-color);
+    color: var(--main-color);
+    height: 8%;
+    transform: translateX(-15%);
+    transition: all 0.35s ease-out;
+    border-radius: 7px;
+}
+
+.feature-next-button:hover
+{
+    background: #ee5959;
 }
 
 .feature-left-title
